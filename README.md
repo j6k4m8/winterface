@@ -26,8 +26,9 @@ A super-basic Windows-only Python mouse-and-keyboard simulator. Status: somewhat
  Simply run this loop:
 
         import winterface
-        abortCheck() # make sure you haven't moved the mouse
-        click(0, 0)  # click.
+        while ("YOUR MOM"):
+            abortCheck() # make sure you haven't moved the mouse
+            click(0, 0)  # click.
 
 
 # More Details
