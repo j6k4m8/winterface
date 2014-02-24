@@ -3,6 +3,34 @@ winterface
 
 A super-basic Windows-only Python mouse-and-keyboard simulator. Status: somewhat but not entirely unlike stable.
 
+# Examples of Use Cases
+- ## iTunes Manipulation
+ The other day, I bought a higher-bitrate version of a few songs I've played a million times in iTunes. There's no way to manually adjust the play-count of a track in iTunes, but I often sort these songs by 'Play.' So I had to play my new audio files hundreds of times to make them match their older counterparts before deleting the old ones.
+
+ First, I turned on 'repeat-one' to replay a song after it ended. Then I used `getMousePos()` to find the pixel location of the song's ending in the trackbar, which (when you click it) ends the song and starts it over as though it's been played in full.
+
+ Finally, I used this script to match play-counts:
+     
+         import winterface
+         def replay(n): 
+             for i in range(n):
+                 abortCheck(0.25);
+                 click(994,42)
+            
+ *Et voila!*
+ 
+- ## Drawing Straight Lines in Paint
+ ...not sure how frequently you have to do this, but `drag(10, 10, 10, 20)` will draw a 10px straight line.
+
+- ## Spam-Clicking Until User Moves Mouse
+ Simply run this loop:
+
+        import winterface
+        abortCheck() # make sure you haven't moved the mouse
+        click(0, 0)  # click.
+
+
+# More Details
 
 I wrote a huge readme in an online markdown editor and then my internet died and I lost it all. So here. This.
 
@@ -51,5 +79,5 @@ I wrote a huge readme in an online markdown editor and then my internet died and
 
 
 You also get these: 
-    SCREEN_WIDTH, SCREEN_HEIGHT, ENTER, TAB, SHIFT, CTRL, ALT, BACKSPACE, LEFT, UP, RIGHT, DOWN, WIN, F6, F11, NUM1, NUM2, NUM3, NUM4
+    `SCREEN_WIDTH`, `SCREEN_HEIGHT`, `ENTER`, `TAB`, `SHIFT`, `CTRL`, `ALT`, `BACKSPACE`, `LEFT`, `UP`, `RIGHT`, `DOWN`,     `WIN`, `F6`, `F11`, `NUM1`, `NUM2`, `NUM3`, `NUM4`
 
